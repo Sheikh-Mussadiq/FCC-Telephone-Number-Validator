@@ -5,13 +5,7 @@ const resultsDiv = document.getElementById("results-div");
 
 const checkValidity = (input) => { 
     if (input === "") {
-        alert("Please enter a phone number");
-        return;
-    }
-
-
-    if (input.length !== 10) {
-        alert("Phone number must be 10 digits");
+        alert("Please provide a phone number");
         return;
     }
 
@@ -19,7 +13,7 @@ const checkValidity = (input) => {
 
     const pTag = document.createElement("p");
     pTag.className = "results";
-    pTag.textContent = input + " is " + (regex.test(input) ? "valid" : "invalid");
+    pTag.textContent = `${regex.test(input) ? "Valid" : "Invalid"} Us number: ${input}`;
     resultsDiv.appendChild(pTag);  
 }
 
